@@ -1,21 +1,17 @@
 #!/usr/bin/env python3
-""" Range simple helper fun """
+""" Page index module
+"""
 from typing import Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    """ Gets start and end indices of dataset
+        - Args:
+            - page: page to look for information
+            - page_size: size of each page
+        - Return:
+            - tuple of start index and end index of each page
     """
-        Range of the page
-
-        Args:
-            page: Current page
-            page_size: Total size of the page
-
-        Return:
-            tuple with the range start and end size page
-    """
-
-    final_size: int = page * page_size
-    start_size: int = final_size - page_size
-
-    return (start_size, final_size)
+    start_idx = (page - 1) * page_size
+    end_idx = page * page_size
+    return start_idx, end_idx
